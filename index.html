@@ -18,14 +18,16 @@
 	}
 		body {
 			font-family: Gentium Book Basic;
-			width:100%;
+			margin:0;
+			line-height: 
 		}
 		header {
 			background: #ffffff url("images/header.png") no-repeat left bottom;
 			background-size:cover;
-			height:570px;
+			/*height:570px;*/
 			overflow:hidden;
 			width:100%;
+			box-shadow: 0em .2em .5em rgba(0,0,0,.45);
 		}
 		.head-article {
 			padding:350px 0 0 0;
@@ -36,6 +38,10 @@
 		.head-article h1{
 			font-size:50px;
 		}
+		.head-article a{
+			text-decoration: none;
+			color:#d7d7d7;
+		}
 		.head-article p{
 			font-size:28px;
 			border-width: 0 0 1px 0;
@@ -45,7 +51,7 @@
 			color:#d7d7d7;
 		}
 		.head-article ul{
-			padding:47px 0;
+			padding:30px 0 35px 0;
 			display:table;
 			width:100%;
 		}
@@ -58,10 +64,19 @@
 			display:inline-block;
 			width:410px;
 			padding:0;
+			text-align: left;
 		}
-		#author-icon {
-			margin:0 185px;
+
+		.head-article li{
+			font-weight:bold;
+			font-size:18px;
 		}
+
+		.head-article li label{
+			font-weight:bold;
+			font-size:15px;
+		}
+
 		.head-article li img{
 			vertical-align: middle;
 		}
@@ -73,6 +88,11 @@
 			padding:60px 0;
 			font-size:18px;
 		}
+		.main-article p{
+			font-size:18px;
+			line-height:2em;
+		}
+
 	</style>
 </head>
 <body>
@@ -83,16 +103,26 @@
 		<div>
 			<ul>
 				<li>
-					<img id="author-icon" src="images/author-icon.png"/>
+					<label class="label">WRITTEN BY</label>
+					<br>
+					<a id="author-icon" href="#">
+						Arthur GUILLERMIN HAZAN <img src="images/author-icon.png"/>
+					</a>
 				</li>
 				<li>
-					<img id="post-star" src="images/star.png"/>
+					<a id="post-star" href="#">
+						<img id="post-star" src="images/star.png"/>
+					</a>
 				</li>
 				<li>
-					<img id="post-heart" src="images/heart.png"/>
+					<a id="post-heart" href="#">
+						<img id="post-heart" src="images/heart.png"/>
+					</a>
 				</li>
 				<li>
-					<img id="rdr-post" src="images/enter.png"/>
+					<a id="rdr-post" href="#">
+						<img id="rdr-post" src="images/enter.png"/>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -100,19 +130,14 @@
 </header>
 <main>
 	<article class="main-article">
-		<label>LINES</label>
-			<label>1.</label>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id sapien at sem eleifend laoreet. Vivamus sagittis ipsum sed sapien dapibus, et ultrices est vulputate. Nulla nisi ligula, cursus sed auctor sit amet, convallis a elit. Aenean vestibulum rhoncus commodo.</p>
 
-			<h6>5.</h6>
 			<p>Sed euismod congue purus, ut adipiscing metus venenatis et. Proin dapibus sed massa ac mollis. Praesent tempus nulla sapien. Morbi vel blandit elit. Etiam lacinia interdum nibh, a tristique nulla tempor sit amet. Praesent cursus orci ut facilisis commodo.</p>
 
-			<figure>"This is a long, neat and pointless quote"</figure>
+			<blockqoute>"This is a long, neat and pointless quote"</blockqoute>
 
-			<h6>10.</h6>
 			<p>Ut tempus elementum tortor, a posuere nisl tincidunt sit amet. Etiam est augue, scelerisque eu vestibulum nec, pulvinar eu libero. Sed mattis faucibus risus non luctus. Suspendisse et odio ut turpis cursus varius sed et dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sed leo neque.</p>
 
-			<h6>15.</h6>
 			<p>Donec consectetur accumsan justo, in placerat ante dictum id. Vestibulum magna elit, tincidunt ut ultrices vitae, vehicula eu urna. Donec malesuada ut orci ut aliquam. Mauris non neque massa. Praesent tincidunt purus ut risus dapibus feugiat. Integer accumsan erat at tellus accumsan laoreet :</p>
 			<ul>
 				<li>
