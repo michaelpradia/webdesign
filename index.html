@@ -19,9 +19,9 @@
 		body {
 			font-family: Gentium Book Basic;
 			margin:0;
-			line-height: 
 		}
 		header {
+			display:flex;
 			background: #ffffff url("images/header.png") no-repeat left bottom;
 			background-size:cover;
 			/*height:570px;*/
@@ -52,24 +52,25 @@
 		}
 		.head-article ul{
 			padding:30px 0 35px 0;
-			display:table;
+			display:flex;
 			width:100%;
+			align-items:center;
+			justify-content:space-between;
 		}
 		.head-article li{
-			display:table-cell;
-			padding:0 0 0 15px;
+			/*padding:0 0 0 15px;*/
 			text-align: right;
+			font-weight:bold;
+			font-size:18px;
+			flex:0.5 1 auto;
+			min-width:20px;
 		}
 		.head-article li:first-child{
 			display:inline-block;
 			width:410px;
 			padding:0;
 			text-align: left;
-		}
-
-		.head-article li{
-			font-weight:bold;
-			font-size:18px;
+			flex:2 auto;
 		}
 
 		.head-article li label{
@@ -87,12 +88,86 @@
 			width:600px;
 			padding:60px 0;
 			font-size:18px;
+			line-height:2em;
 		}
 		.main-article p{
 			font-size:18px;
-			line-height:2em;
+		}
+		.main-article ul{
+			list-style:disc;
+			margin:58px 0 8px 38px;
+		}
+		.main-article li{
+			margin:0 0 50px;
 		}
 
+		#backtop {
+			color:#a8a8a8;
+			margin:auto;
+			text-align:center;
+			display:flex;
+			justify-content:center;
+			width:120px;
+			background: #fff url("images/arrow-up.png") no-repeat top center;
+			padding:7px;
+			text-decoration: none;
+		}
+		/*Footer*/
+		footer {
+			color:#fff;
+			display:flex;
+			flex-wrap:wrap;
+			z-index:99;
+		}
+		footer > section {
+			color:#fff;
+			line-height:2em;
+		}
+		footer > section a {
+			text-decoration:none;
+			color:#fff;
+			font-size:35px;
+		}
+		footer > section h3 {
+			font-size:25px;
+		}
+		.share-rtcl-ctnr {
+			box-shadow: 0em 0em 0.7em .2em rgba(0,0,0, .45);
+			display:flex;
+    		justify-content:center;
+    		align-items:center;
+			height:253px;
+			background: linear-gradient(to bottom, #2b3438 20%, #717d74);
+			width:100%;
+		}
+		footer #share-article {
+			border:#2ecc71 solid 2px;
+			border-radius: 24em;
+			padding:20px 22px;
+			color:#2ecc71;
+			display:flex;
+			width:150px;
+			text-decoration: none;
+		}
+		footer .other-articles{
+			display:flex;
+			justify-content:center;
+			width:100%;
+		}
+		footer .other-articles article{
+			border:1px #000 solid;
+			flex-grow:1;
+
+		}
+		.bott-l-articles {
+			background: linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url("images/bott-l.png") no-repeat center center;
+			background-size:cover;
+			height:360px;
+		}
+		.bott-r-articles {
+			background:#fff url("images/bott-r.png") no-repeat center center;
+			background-size:cover;
+		}
 	</style>
 </head>
 <body>
@@ -150,25 +225,33 @@
 					 this is a third bullet point with still some Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id sapien at sem eleifend laoreet. Vivamus sagittis ipsum sed sapien dapibus, et ultrices est vulputate. Nulla nisi ligula, cursus sed auctor sit amet, convallis a elit.
 				</li>
 			</ul>
-			<div>BACK TO TOP</div>
+			<a href="#" id="backtop"> BACK TO TOP </a>
 	</article>
 </main>
 <footer>
-<div>
-	<a>SHARE THIS ARTICLE</a>
+<div class="share-rtcl-ctnr">
+	<a href="#" id="share-article">SHARE THIS ARTICLE</a>
 </div>
-<article>
-	<article>
+<section class="other-articles">
+	<article class="bott-l-articles">
 		<p>Next in your reading list...</p>
-		<h2>Seaside, no thanks...</h2>
+		<h2><a href="#">Seaside, no thanks...</a></h2>
 		<h3>This is an awesome headline</h3>
 	</article>
-	<article>
+	<article class="bott-r-articles">
 		<p>Next in your reading list...</p>
-		<h2>Roma, bella vita...</h2>
+		<h2><a href="#">Roma, bella vita...</a></h2>
 		<h3>This is an awesome headline</h3>
 	</article>
-</article>
+</section>
+<!-- <div style="width:300px;display:flex;">
+	<div style="order:2;flex-grow:2;border:1px solid #fff">2</div>
+	<div style="order:1;flex-grow:1;border:1px solid #fff">1</div>
+	<div style="order:4;flex-grow:1;border:1px solid #fff">4</div>
+	<div style="order:3;flex-grow:1;border:1px solid #fff">3</div>
+	<div style="order:6;flex-grow:1;border:1px solid #fff">6</div>
+	<div style="order:5;flex-grow:1;border:1px solid #fff">5</div>
+</div> -->
 </footer>
 </body>
 </html>
