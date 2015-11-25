@@ -1,11 +1,13 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	<title>Webdesigning</title>
 	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
 	<! [endif]-->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css"/>
 	<!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gentium+Book+Basic" /> -->
 	<style>
@@ -21,19 +23,19 @@
 			margin:0;
 		}
 		header {
-			display:flex;
 			background: #ffffff url("images/header.png") no-repeat left bottom;
 			background-size:cover;
-			/*height:570px;*/
-			overflow:hidden;
 			width:100%;
+			position:relative;
 			box-shadow: 0em .2em .5em rgba(0,0,0,.45);
 		}
 		.head-article {
 			padding:350px 0 0 0;
-			width:600px;
+			max-width:600px;
+			min-width:50px;
 			margin:auto;
 			color:#fff;
+			overflow: hidden;
 		}
 		.head-article h1{
 			font-size:50px;
@@ -49,43 +51,52 @@
 			border-style:solid;
 			padding: 10px 0 10px 0;
 			color:#d7d7d7;
+			display:block;
+			position:relative;
 		}
 		.head-article ul{
 			padding:30px 0 35px 0;
-			display:flex;
-			width:100%;
-			align-items:center;
-			justify-content:space-between;
+			display:table;
+			position:relative;
+			width: 100%;
 		}
 		.head-article li{
 			/*padding:0 0 0 15px;*/
 			text-align: right;
 			font-weight:bold;
 			font-size:18px;
-			flex:0.5 1 auto;
+			position:relative;
+			display:table-cell;
 			min-width:20px;
+			width:7%;
 		}
 		.head-article li:first-child{
 			display:inline-block;
-			width:410px;
 			padding:0;
 			text-align: left;
-			flex:2 auto;
+			/*flex:2 auto;*/
+			vertical-align: middle;
+			width:73%;
 		}
-
 		.head-article li label{
 			font-weight:bold;
 			font-size:15px;
 		}
 
-		.head-article li img{
+		.head-article li a{
+			background:rgba(0,0,0, 0) url(images/star.png) 3px 1px no-repeat center center;
+			background-size: cover;
+			width:40px;
+			height:auto;
+		}
+		.head-article li a img{
 			vertical-align: middle;
 		}
-
 		/* Main */
 		.main-article {
 			margin:auto;
-			width:600px;
+			max-width:600px;
+			min-width:50px;
 			padding:60px 0;
 			font-size:18px;
 			line-height:2em;
@@ -105,9 +116,8 @@
 			color:#a8a8a8;
 			margin:auto;
 			text-align:center;
-			display:flex;
-			justify-content:center;
-			width:120px;
+			display:block;
+			/*justify-content:center;*/
 			background: #fff url("images/arrow-up.png") no-repeat top center;
 			padding:7px;
 			text-decoration: none;
@@ -126,27 +136,36 @@
 		footer > section a {
 			text-decoration:none;
 			color:#fff;
-			font-size:35px;
+			font-size:38px;
+			line-height: 10px;
 		}
 		footer > section h3 {
-			font-size:25px;
+			font-size:28px;
+			color:#d7d7d7;
 		}
 		.share-rtcl-ctnr {
 			box-shadow: 0em 0em 0.7em .2em rgba(0,0,0, .45);
-			display:flex;
-    		justify-content:center;
-    		align-items:center;
+			display:table;
 			height:253px;
 			background: linear-gradient(to bottom, #2b3438 20%, #717d74);
+			
 			width:100%;
+			z-index:998;
+			text-align: center;
+		}
+		.share-rtcl-ctnr div {
+		  display:table-cell;
+			vertical-align: middle;
+			width:100%;
+			margin:auto;
 		}
 		footer #share-article {
 			border:#2ecc71 solid 2px;
 			border-radius: 24em;
 			padding:20px 22px;
 			color:#2ecc71;
-			display:flex;
-			width:150px;
+			margin:auto;
+			height:50px;
 			text-decoration: none;
 		}
 		footer .other-articles{
@@ -155,19 +174,89 @@
 			width:100%;
 		}
 		footer .other-articles article{
-			border:1px #000 solid;
+			/*border:1px #000 solid;*/
 			flex-grow:1;
-
+			height:360px;
 		}
 		.bott-l-articles {
 			background: linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url("images/bott-l.png") no-repeat center center;
 			background-size:cover;
-			height:360px;
+			padding: 70px 0 0 67px;
 		}
 		.bott-r-articles {
-			background:#fff url("images/bott-r.png") no-repeat center center;
+			background:linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url("images/bott-r.png") no-repeat center center;
 			background-size:cover;
+			padding: 70px 0 0 67px;
+
 		}
+
+		.other-articles article p {
+			font-size:16px;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 0 0 50px 0;
+		}
+		.other-articles {
+			justify-content:start-end;
+			flex-wrap:wrap;
+		}
+
+@media (min-width:768px) and (max-width:980px) {
+
+/*Header*/
+	.head-article {
+		padding:240px 10px 0 10px;
+	}
+/*main*/
+	.main-article {
+		padding:60px 10px 10px 10px;
+	}
+/*footer*/
+	footer > section a {
+		font-size:35px;
+	}
+	footer > section h3 {
+		font-size:25px;
+	}
+}
+
+@media (max-width:767px) {
+
+/*Header*/
+	.head-article {
+		padding:180px 10px 0 10px;
+	}
+/*main*/
+	.main-article {
+		padding:60px 10px 10px 10px;
+	}
+/*footer*/
+	footer > section a {
+		font-size:35px;
+	}
+	footer > section h3 {
+		font-size:25px;
+	}
+}
+
+@media (max-width:480px) {
+
+/*Header*/
+	.head-article {
+		padding:100px 10px 0 10px;
+	}
+/*main*/
+	.main-article {
+		padding:60px 10px 10px 10px;
+	}
+/*footer*/
+	footer > section a {
+		font-size:32px;
+	}
+	footer > section h3 {
+		font-size:22px;
+	}
+}
 	</style>
 </head>
 <body>
@@ -175,7 +264,7 @@
 	<article class="head-article">
 		<h1>This is Title</h1>
 		<p>This is an awesome headline</p>
-		<div>
+		<!-- <div> -->
 			<ul>
 				<li>
 					<label class="label">WRITTEN BY</label>
@@ -185,22 +274,22 @@
 					</a>
 				</li>
 				<li>
-					<a id="post-star" href="#">
-						<img id="post-star" src="images/star.png"/>
+					<a id="post-star" href="#"><i class="fa fa-star"></i>
+						<!-- <img src="images/star.png"/> -->
 					</a>
 				</li>
 				<li>
-					<a id="post-heart" href="#">
-						<img id="post-heart" src="images/heart.png"/>
+					<a id="post-heart" href="#"><i class="fa fa-heart"></i>
+						<!-- <img src="images/heart.png"/> -->
 					</a>
 				</li>
 				<li>
-					<a id="rdr-post" href="#">
-						<img id="rdr-post" src="images/enter.png"/>
+					<a id="rdr-post" href="#"><i class="fa fa-share"></i>
+						<!-- <img src="images/enter.png"/> -->
 					</a>
 				</li>
 			</ul>
-		</div>
+		<!-- </div> -->
 	</article>
 </header>
 <main>
@@ -209,7 +298,7 @@
 
 			<p>Sed euismod congue purus, ut adipiscing metus venenatis et. Proin dapibus sed massa ac mollis. Praesent tempus nulla sapien. Morbi vel blandit elit. Etiam lacinia interdum nibh, a tristique nulla tempor sit amet. Praesent cursus orci ut facilisis commodo.</p>
 
-			<blockqoute>"This is a long, neat and pointless quote"</blockqoute>
+			<span>"This is a long, neat and pointless quote"</span>
 
 			<p>Ut tempus elementum tortor, a posuere nisl tincidunt sit amet. Etiam est augue, scelerisque eu vestibulum nec, pulvinar eu libero. Sed mattis faucibus risus non luctus. Suspendisse et odio ut turpis cursus varius sed et dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sed leo neque.</p>
 
@@ -230,7 +319,8 @@
 </main>
 <footer>
 <div class="share-rtcl-ctnr">
-	<a href="#" id="share-article">SHARE THIS ARTICLE</a>
+	<div>
+	<a href="#" id="share-article">SHARE THIS ARTICLE</a></div>
 </div>
 <section class="other-articles">
 	<article class="bott-l-articles">
